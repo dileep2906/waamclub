@@ -16,7 +16,21 @@ class AgentController extends Controller
      */
     public function index()
     {
-        //
+        $Company = Agent::all();
+
+        if (count($Company)) {
+            return response()->json([
+                'status' => 'SUCCESS',
+                'status_code' => 200,
+                'data' => $Company
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'FAILED',
+                'status_code' => 404,
+                'message' => "No Records Found"
+            ]);
+        }
     }
 
     /**

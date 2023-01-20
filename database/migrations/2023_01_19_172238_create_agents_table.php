@@ -19,13 +19,13 @@ return new class extends Migration
             $table->string('mobile');
             $table->string('whatsapp_number')->nullable();
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+            
             $table->string('home_address')->nullable();
             $table->string('current_address')->nullable();
             $table->string('nearest_hub')->nullable();;
             $table->string('landmark')->nullable();;
             $table->string('password');
-            $table->string('enc_pass');
+            
             $table->string('agent_id')->unique();
             $table->string('dob')->nullable();
             $table->string('country')->nullable();

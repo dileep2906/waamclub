@@ -12,6 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $guard_name = 'sanctum';
     /**
      * The attributes that are mass assignable.
      *
@@ -23,6 +24,28 @@ class User extends Authenticatable
         'password',
         'enc_pass',
         'user_type',
+        'father_name'       ,
+        'mother_name'       ,
+        'email'             ,
+        'password'          ,
+        'mobile'            ,
+        'whatsapp_number'   ,
+        'dob'               ,
+        'country'           ,
+        'state'             ,
+        'city'              ,
+        'home_address'      ,
+        'current_address'   ,
+        'pan_number'        ,
+        'pan_image'         ,
+        'bank_account'      ,
+        'ifcs_code'         ,
+        'branch'            ,
+        'bank_holder_name'  ,
+        'upi_number'        ,
+        'adhar_number'      ,
+        'profile_image'     ,
+        'signature_image'   ,
     ];
 
     /**

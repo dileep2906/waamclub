@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreAgentRequest extends FormRequest
+class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,19 +25,18 @@ class StoreAgentRequest extends FormRequest
     {
         return [
             'name'              =>'required',
+            'father_name'       =>'required',
+            'mother_name'       =>'required',
+            'email'             =>'required',
+            'password'          =>'required',
             'mobile'            =>'required',
             'whatsapp_number'   =>'required',
-            'email'             =>'required',
-            'home_address'      =>'required',
-            'current_address'   =>'required',
-            'nearest_hub'       =>'required',
-            'landmark'          =>'required',
-            'password'          =>'required',           
-            'agent_id'          =>'required',
             'dob'               =>'required',
             'country'           =>'required',
             'state'             =>'required',
-            'city'              =>'required',           
+            'city'              =>'required',
+            'home_address'      =>'required',
+            'current_address'   =>'required',
             'pan_number'        =>'required',
             'pan_image'         =>'required',
             'bank_account'      =>'required',
