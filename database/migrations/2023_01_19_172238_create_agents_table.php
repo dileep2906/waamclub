@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('mobile');
+            $table->string('mobile')->nullable();
             $table->string('whatsapp_number')->nullable();
             $table->string('email')->unique();
             
@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('nearest_hub')->nullable();;
             $table->string('landmark')->nullable();;
             $table->string('password');
-            
+            $table->string('enc_pass');
             $table->string('agent_id')->unique();
             $table->string('dob')->nullable();
             $table->string('country')->nullable();
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->string('profile_image')->nullable();
             $table->string('signature_image')->nullable();
             $table->string('user_type')->nullable();
-            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('is_enabled')->default(0)->comment("0 is disabled user, 1 is active");
             $table->rememberToken();
